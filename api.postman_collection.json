@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "4964a6cb-ad52-4bb7-8d48-4164c704a7ce",
+		"name": "dblue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"username\":\"kumar\",\n\"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.25:9000/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"25"
+					],
+					"port": "9000",
+					"path": [
+						"login"
+					]
+				},
+				"description": "Login with username and password"
+			},
+			"response": []
+		},
+		{
+			"name": "/import_csv",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.2.25:9000/import_csv",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"25"
+					],
+					"port": "9000",
+					"path": [
+						"import_csv"
+					]
+				},
+				"description": "import csv data to database"
+			},
+			"response": []
+		},
+		{
+			"name": "/edit_profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMuA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\":\"5e6757d614624adefa020dd8\",\n\"username\":\"shankar\",\n\"password\":\"123456\",\n\"latitude\":\"12.00555\",\n\"longitude\":\"76.96613\",\n\"place\":\"cbe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.25:9000/edit_profile",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"25"
+					],
+					"port": "9000",
+					"path": [
+						"edit_profile"
+					]
+				},
+				"description": "edit profile details"
+			},
+			"response": []
+		},
+		{
+			"name": "/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"ramanan\",\n\t\"password\":123456,\n\t\"latitude\":\"10.111\",\n\t\"longitude\":77.2222,\n\t\"place\":\"erode city\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.25:9000/signup",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"25"
+					],
+					"port": "9000",
+					"path": [
+						"signup"
+					]
+				},
+				"description": "signup as new user update if user already exists"
+			},
+			"response": []
+		},
+		{
+			"name": "/friends?type=nearme",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMuA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"type\":\"nearme\",\n\"username\":\"shankar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.25:9000/friends",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"25"
+					],
+					"port": "9000",
+					"path": [
+						"friends"
+					]
+				},
+				"description": "find nearby users"
+			},
+			"response": []
+		},
+		{
+			"name": "/friends?type=points",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMuA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"type\":\"points\",\n\"latitude\":39.1605965,\n\"longitude\":-9.3472738\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.2.25:9000/friends?type=points&latitude=11.3428&longitude=77.72741",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"2",
+						"25"
+					],
+					"port": "9000",
+					"path": [
+						"friends"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "points"
+						},
+						{
+							"key": "latitude",
+							"value": "11.3428"
+						},
+						{
+							"key": "longitude",
+							"value": "77.72741"
+						}
+					]
+				},
+				"description": "Find friends by providing latitude and longitude"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
