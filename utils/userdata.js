@@ -14,22 +14,23 @@ exports.parse_data = (data, file_no) => {
                 el.password = md5(el.password)
                 delete el.latitude
                 delete el.longitude
-                await User.updateOne({ username: el.username }, { $set: el }, { upsert: true }).catch((el) => { console.log(el); reject({ status: 199, error: "Error updating document" }) });
+                await User.updateOne({ username: el.username }, { $set: el }, { upsert: true })
+                    .catch((el) => { console.log(el); reject({ status: 199, error: "Error updating document" }) });
             } else {
                 if (el.username == undefined || el.username == '') {
-                    errors.push(`Invalid username in row ${index + 1}(File no: ${file_no + 1})`)
+                    errors.push(`Invalid username in row ${index + 1} value: ${el.username} (File no: ${file_no + 1})`)
                 }
                 if (el.password == undefined || el.password == '') {
-                    errors.push(`Invalid password in row ${index}(File no: ${file_no + 1})`)
+                    errors.push(`Invalid password in row ${index} value: ${el.password} (File no: ${file_no + 1})`)
                 }
-                if (el.latitude == undefined || el.latitude == '') {
-                    errors.push(`Invalid latitude in row ${index}(File no: ${file_no + 1})`)
+                if (el.latitude == '') {
+                    errors.push(`Invalid latitude in row ${index} value: ${el.latitude} (File no: ${file_no + 1})`)
                 }
-                if (el.longitude == undefined || el.longitude == '') {
-                    errors.push(`Invalid longitude in row ${index}(File no: ${file_no + 1})`)
+                if (el.longitude == '') {
+                    errors.push(`Invalid longitude in row ${index} value: ${el.longitude} (File no: ${file_no + 1})`)
                 }
                 if (el.place == undefined || el.place == '') {
-                    errors.push(`Invalid place in row ${index}(File no: ${file_no + 1})`)
+                    errors.push(`Invalid place in row ${index} value: ${el.place} (File no: ${file_no + 1})`)
                 }
             }
         }, () => {

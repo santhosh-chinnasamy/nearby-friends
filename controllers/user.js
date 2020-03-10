@@ -16,11 +16,10 @@ const storage = multer.diskStorage({
 		file.mimetype === 'text/csv' ? cb(null, './uploads') : cb(null, false);
 	},
 	filename: (req, file, cb) => {
-		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+		cb(null, file.originalname + '-' + Date.now() + path.extname(file.originalname));
 	}
 });
-
-const upload = multer({ storage: storage }).array('file', parseInt(process.env.FILE_COUNT));
+const upload = multer({ storage: storage }).array('files', parseInt(process.env.FILE_COUNT));
 
 // User Login
 exports.login = async (req, res) => {
@@ -53,14 +52,15 @@ exports.signup = async (req, res) => {
 
 // Get user details
 exports.profile = async (req, res) => {
-	const { id } = req.body;
-	console.log(id);
+	const id = req.params.id;
 	const user = await User.findById({ _id: id });
 	if (!user) {
 		res.json({ status: 199, message: "User Id not found" });
 		return
 	}
-	res.json({ status: 200, message: "User details", details: user });
+	let { username, place, location } = user;
+	let details = { username, place, location };
+	res.json({ status: 200, message: "User details", details });
 }
 
 // Edit User profile
@@ -83,7 +83,7 @@ exports.edit_profile = async (req, res) => {
 }
 
 // Get nearby users list
-exports.users_nearme = async (req, res) => {
+exports.users_nearby = async (req, res) => {
 	let coordinates = [];
 	let data = req.body;
 	if (data.username)
@@ -111,7 +111,7 @@ exports.users_nearme = async (req, res) => {
 	];
 
 	let nearby_list = await User.aggregate(args);
-	res.json({ status: 200, message: "Neearby users list", list: nearby_list.length });
+	res.json({ status: 200, message: "Nearby users list", list: nearby_list });
 }
 
 // Import users from csv

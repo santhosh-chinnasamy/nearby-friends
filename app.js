@@ -5,6 +5,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors')
 require('dotenv').config()
 
+// Create uploads folder if not exists
+const fs = require('fs');
+const uploadsdir = './uploads';
+if (!fs.existsSync(uploadsdir)) {
+	fs.mkdirSync(uploadsdir);
+}
 const indexRouter = require('./routes/index');
 const app = express();
 
