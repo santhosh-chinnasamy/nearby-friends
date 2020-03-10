@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4964a6cb-ad52-4bb7-8d48-4164c704a7ce",
+		"_postman_id": "1e772aa4-b1cd-45cc-958f-091efa4373c7",
 		"name": "dblue",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"username\":\"kumar\",\n\"password\":\"123456\"\n}",
+					"raw": "{\n\"username\":\"santhosh\",\n\"password\":\"123456\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -27,13 +27,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/login",
+					"raw": "http://127.0.0.1:9000/login",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -62,18 +62,21 @@
 						{
 							"key": "files",
 							"type": "file",
-							"src": []
+							"src": [
+								"/home/dhinesh/Desktop/santhosh/nearby-friends/MOCK_DATA.csv",
+								"/home/dhinesh/Desktop/santhosh/nearby-friends/MOCK_DATA_2.csv"
+							]
 						}
 					]
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/import_csv",
+					"raw": "http://127.0.0.1:9000/import_csv",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -94,7 +97,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMuA",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3YjViZDQ1NzI3Mjc4MjQ1NWE1M2YiLCJpYXQiOjE1ODM4NTYxODUsImV4cCI6MTU4Mzk0MjU4NX0.yUJqNO77tTRSHrdMlNFvyIDOtNrHifMBCsHZQMd36Go",
 						"type": "text"
 					},
 					{
@@ -106,7 +109,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"id\":\"5e6757d614624adefa020dd8\",\n\"username\":\"shankar\",\n\"password\":\"123456\",\n\"latitude\":\"12.00555\",\n\"longitude\":\"76.96613\",\n\"place\":\"cbe\"\n}",
+					"raw": "{\n\"id\":\"5e67b5bd457272782455a53f\",\n\"username\":\"santhosh\",\n\"password\":\"123456\",\n\"latitude\":\"12.00555\",\n\"longitude\":\"76.96613\",\n\"place\":\"Thingalur\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -114,13 +117,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/edit_profile",
+					"raw": "http://127.0.0.1:9000/edit_profile",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -145,7 +148,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\":\"ramanan\",\n\t\"password\":123456,\n\t\"latitude\":\"10.111\",\n\t\"longitude\":77.2222,\n\t\"place\":\"erode city\"\n}",
+					"raw": "{\n\t\"username\":\"ramanan\",\n\t\"password\":123456,\n\t\"latitude\":\"10.111\",\n\t\"longitude\":77.2222,\n\t\"place\":\"erode\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -153,13 +156,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/signup",
+					"raw": "http://127.0.0.1:9000/signup",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -171,7 +174,7 @@
 			"response": []
 		},
 		{
-			"name": "/friends?type=nearme",
+			"name": "/nearby?type=nearme",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -180,7 +183,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMuA",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3YjViZDQ1NzI3Mjc4MjQ1NWE1M2YiLCJpYXQiOjE1ODM4NTYxODUsImV4cCI6MTU4Mzk0MjU4NX0.yUJqNO77tTRSHrdMlNFvyIDOtNrHifMBCsHZQMd36Go",
 						"type": "text"
 					},
 					{
@@ -192,7 +195,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"type\":\"nearme\",\n\"username\":\"shankar\"\n}",
+					"raw": "{\n\"type\":\"nearme\",\n\"username\":\"santhosh\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -200,17 +203,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/friends",
+					"raw": "http://127.0.0.1:9000/nearby",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
-						"friends"
+						"nearby"
 					]
 				},
 				"description": "find nearby users"
@@ -218,13 +221,13 @@
 			"response": []
 		},
 		{
-			"name": "/friends?type=points",
+			"name": "/nearby?type=points",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMuA",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3YjViZDQ1NzI3Mjc4MjQ1NWE1M2YiLCJpYXQiOjE1ODM4NTYxODUsImV4cCI6MTU4Mzk0MjU4NX0.yUJqNO77tTRSHrdMlNFvyIDOtNrHifMBCsHZQMd36Go",
 						"type": "text"
 					},
 					{
@@ -244,22 +247,22 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/friends?type=points&latitude=11.3428&longitude=77.72741",
+					"raw": "http://127.0.0.1:9000/nearby?type=point&latitude=11.3428&longitude=77.72741",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
-						"friends"
+						"nearby"
 					],
 					"query": [
 						{
 							"key": "type",
-							"value": "points"
+							"value": "point"
 						},
 						{
 							"key": "latitude",
@@ -272,6 +275,30 @@
 					]
 				},
 				"description": "Find friends by providing latitude and longitude"
+			},
+			"response": []
+		},
+		{
+			"name": "/view_profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:9000/view_profile/5e67b5bd457272782455a53f",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9000",
+					"path": [
+						"view_profile",
+						"5e67b5bd457272782455a53f"
+					]
+				},
+				"description": "Get user info by passing userid"
 			},
 			"response": []
 		}
