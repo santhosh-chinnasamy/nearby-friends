@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"username\":\"kumar\",\n\"password\":\"123456\"\n}",
+					"raw": "{\n\"username\":\"shankar\",\n\"password\":\"123456\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -27,13 +27,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/login",
+					"raw": "http://127.0.0.1:9000/login",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -62,18 +62,18 @@
 						{
 							"key": "files",
 							"type": "file",
-							"src": []
+							"src": "/home/developer/Work/Santhosh_CI/TeamTask/express/nearby-friends/MOCK_DATA.csv"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/import_csv",
+					"raw": "http://127.0.0.1:9000/import_csv",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -94,7 +94,7 @@
 				"header": [
 					{
 						"key": "x-api-key",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMuA",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTY3NTdkNjE0NjI0YWRlZmEwMjBkZDgiLCJpYXQiOjE1ODM4MzkzNjQsImV4cCI6MTU4MzkyNTc2NH0.iHkrsvNAYb7gmAfxw2IUSs_pp6HL7fdS5GvdnVeJMu",
 						"type": "text"
 					},
 					{
@@ -114,13 +114,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/edit_profile",
+					"raw": "http://127.0.0.1:9000/edit_profile",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -153,13 +153,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/signup",
+					"raw": "http://127.0.0.1:9000/signup",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
@@ -171,7 +171,7 @@
 			"response": []
 		},
 		{
-			"name": "/friends?type=nearme",
+			"name": "/nearby?type=nearme",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -218,7 +218,7 @@
 			"response": []
 		},
 		{
-			"name": "/friends?type=points",
+			"name": "/nearby?type=points",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -244,17 +244,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://192.168.2.25:9000/friends?type=points&latitude=11.3428&longitude=77.72741",
+					"raw": "http://127.0.0.1:9000/nearby?type=points&latitude=11.3428&longitude=77.72741",
 					"protocol": "http",
 					"host": [
-						"192",
-						"168",
-						"2",
-						"25"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "9000",
 					"path": [
-						"friends"
+						"nearby"
 					],
 					"query": [
 						{
